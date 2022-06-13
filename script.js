@@ -1,6 +1,7 @@
 
-addEventListener('DOMContentLoaded', ()=> {
-	let positon = 0;
+addEventListener('DOMContentLoaded', () =>
+{
+	let position = 0;
 	const slideToShow = 1;
 	const slideToscroll = 1;
 
@@ -11,32 +12,40 @@ addEventListener('DOMContentLoaded', ()=> {
 	const btnNext = document.querySelector('.main-slider__button--next');
 	const slideWidth = container.clientWidth / slideToShow;
 	const movePosition = slideToscroll * slideWidth;
-	console.log(movePosition);
-
 	const totalSlides = slide.length * slideWidth;
 
+
+	console.log(position);
 	slide.forEach((item) =>
 	{
 		item.style.minWidth = slideWidth;
 	});
 	btnNext.addEventListener('click',() =>
 	{
-		positon -= movePosition;
+		position -= movePosition;
+		console.log(position);
 		setPosition();
-		checkButtons();
 	});
 	btnPrev.addEventListener('click',() =>
 	{
-		positon += movePosition;
+		position += movePosition;
+		console.log(position);
 		setPosition();
-		checkButtons();
+		restartSlider();
 	});
 	function setPosition()
 	{
-		track.style.transform = `translateX(${positon}px)`
+		track.style.transform = `translateX(${position}px)`;
 	}
 	function restartSlider()
 	{
-		
+		if(position > 0)
+		{
+			track.style.transform = `translateX(${position = 0}px)`;
+		}
+		else if(position === -totalSlides)
+		{
+			track.style.transform = `translateX(${position = 0}px)`;
+		}
 	}
 });
