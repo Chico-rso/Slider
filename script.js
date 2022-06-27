@@ -60,8 +60,6 @@ addEventListener('DOMContentLoaded', () =>
 		const dots = document.querySelectorAll('.main-slider__dot');
 		dots.forEach((item, index) =>
 		{
-			console.log(index);
-			console.log('cur', indexCur);
 			if (index === indexCur)
 			{
 				item.classList.add('active');
