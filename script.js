@@ -38,5 +38,39 @@ addEventListener('DOMContentLoaded', () =>
 	function trackTransform(index)
 	{
 		track.style.transform = `translateX(-${index * movePosition}px)`;
+		activeDot(currentIndexSlide);
 	}
+
+	function initDots()
+	{
+		const dots = document.querySelectorAll('.main-slider__dot');
+		dots.forEach((item, index) =>
+		{
+			item.addEventListener('click', function()
+			{
+				currentIndexSlide = index;
+				trackTransform(currentIndexSlide);
+			})
+		})
+	}
+	initDots();
+
+	let activeDot = function(indexCur)
+	{
+		const dots = document.querySelectorAll('.main-slider__dot');
+		dots.forEach((item, index) =>
+		{
+			console.log(index);
+			console.log('cur', indexCur);
+			if (index === indexCur)
+			{
+				item.classList.add('active');
+			}
+			else
+			{
+				item.classList.remove('active');
+			}
+		})
+	}
+	activeDot(currentIndexSlide);
 });
