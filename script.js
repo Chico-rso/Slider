@@ -11,41 +11,28 @@ addEventListener('DOMContentLoaded', () =>
 	const btnNext = document.querySelector('.main-slider__button--next');
 	const slideWidth = container.clientWidth / slideToShow;
 	const movePosition = slideToscroll * slideWidth;
-	const totalSlides = slides.length * slideWidth;
 	let currentIndexSlide = 0;
 
 	slides.forEach((item) =>
 	{
 		item.style.minWidth = slideWidth;
 	});
-	btnNext.addEventListener('click',() =>
+	btnNext.addEventListener('click', function()
 	{
-		if(currentIndexSlide === slides.length - 1)
+		currentIndexSlide++;
+		if (currentIndexSlide >= slides.length)
 		{
-			currentIndexSlide = - 1;
+			currentIndexSlide = 0;
 		}
-		else
-		{
-			currentIndexSlide++;
-			setPosition(currentIndexSlide);
-		}
-	});
-	btnPrev.addEventListener('click',() =>
+		track.style.transform = `translateX(-${currentIndexSlide * movePosition}px)`;
+	})
+	btnPrev.addEventListener('click', function()
 	{
-		if(currentIndexSlide - 1 === -1)
+		currentIndexSlide--;
+		if (currentIndexSlide < 0)
 		{
-			currentIndexSlide = slides.length;
+			currentIndexSlide = slides.length - 1;
 		}
-		else
-		{
-			currentIndexSlide--;
-			setPosition(currentIndexSlide);
-		}
-	});
-	function setPosition(index)
-	{
-		let position = 0;
-		position = (index * slideWidth) * -1;
-		track.style.transform = `translateX(${position}px)`;
-	}
+		track.style.transform = `translateX(-${currentIndexSlide * movePosition}px)`;
+	})
 });
