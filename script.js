@@ -24,7 +24,7 @@ addEventListener('DOMContentLoaded', () =>
 		{
 			currentIndexSlide = 0;
 		}
-		track.style.transform = `translateX(-${currentIndexSlide * movePosition}px)`;
+		trackTransform(currentIndexSlide);
 	})
 	btnPrev.addEventListener('click', function()
 	{
@@ -33,6 +33,10 @@ addEventListener('DOMContentLoaded', () =>
 		{
 			currentIndexSlide = slides.length - 1;
 		}
-		track.style.transform = `translateX(-${currentIndexSlide * movePosition}px)`;
+		trackTransform(currentIndexSlide);
 	})
+	function trackTransform(index)
+	{
+		track.style.transform = `translateX(-${index * movePosition}px)`;
+	}
 });
