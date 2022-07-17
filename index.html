@@ -1,40 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./style.css">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="style.css">
 	<script src="./script.js" defer></script>
-	<title>Slider</title>
+	<title>Главная</title>
 </head>
 
 <body>
-	<div class="main-slider">
-		<div class="main-slider__container">
-			<div class="main-slider__track">
-				<div class="main-slider__slide">
-					<img src="https://images.unsplash.com/photo-1460648304944-4883b5cfcee5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1491&q=80"
-						alt="image">
-				</div>
-				<div class="main-slider__slide">
-					<img src="https://images.unsplash.com/photo-1532716303749-62ba9821e104?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2012&q=80"
-						alt="image">
-				</div>
-				<div class="main-slider__slide">
-					<img src="https://images.unsplash.com/photo-1593016250787-edf25b355001?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-						alt="image">
-				</div>
+	<h1>Slider v2.0</h1>
+	<div class="slider">
+		<div class="slider__wrapper">
+			<div class="slide">
+				<img src="https://picsum.photos/id/1016/600/400" alt="img">
 			</div>
-			<div class="main-slider__dots">
-				<div class="main-slider__dot" data-slide="0"></div>
-				<div class="main-slider__dot" data-slide="1"></div>
-				<div class="main-slider__dot" data-slide="2"></div>
+			<div class="slide">
+				<img src="https://picsum.photos/id/1025/600/400" alt="img">
+			</div>
+			<div class="slide">
+				<img src="https://picsum.photos/id/1047/600/400" alt="img">
 			</div>
 		</div>
-		<a href="#" class="main-slider__button main-slider__button--next">next</a>
-		<a href="#" class="main-slider__button main-slider__button--prev">prev</a>
+		<div class="slider__btn-prev" id="btn-prev"></div>
+		<div class="slider__btn-next" id="btn-next"></div>
+		<div class="dots__wrapper">
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+		</div>
 	</div>
 </body>
 
