@@ -13,13 +13,13 @@
 	justify-content: center;
 	align-items: center;
 	width: 100%;
+	transition: all 0.5s ease;
 }
 .slide
 {
-	transition: all 1s ease;
 	img
 	{
-		max-width: auto;
+		width: 600px;
 		height: 100%;
 		object-fit: cover;
 	}
