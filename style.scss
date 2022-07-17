@@ -10,7 +10,7 @@
 .slider__wrapper
 {
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 	width: 100%;
 	transition: all 0.5s ease;
@@ -19,6 +19,7 @@
 {
 	img
 	{
+		display: flex;
 		width: 600px;
 		height: 100%;
 		object-fit: cover;
@@ -68,12 +69,16 @@
 	width: 10px;
 	height: 10px;
 	border-radius: 50%;
-	background-color: #fff;
+	background-color: #ffffff80;
 	margin: 0 5px;
 	border-radius: 50%;
 	cursor: pointer;
 	&:hover
 	{
-		background-color: #ffffff80;
+		background-color: #ffffff;
+	}
+	&.active
+	{
+		background-color: #ffffff;
 	}
 }
